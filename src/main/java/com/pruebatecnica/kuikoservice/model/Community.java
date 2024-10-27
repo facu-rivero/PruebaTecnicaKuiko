@@ -11,17 +11,17 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "COMUNIDAD")
+@Table(name = "COMUNIDADES")
 public class Community {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "CODIGO_CA" ,nullable = false)
+    @Column(name = "CODIGO_CA" ,nullable = false, unique = true)
     private String communityCode;
     @Column(name = "NOMBRE_CA" ,nullable = false)
     private String communityName;
 
-    @OneToMany (mappedBy = "COMUNIDAD", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "community", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Province> provinces;
 }
