@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "PROVINCIA")
+@Table(name = "PROVINCIAS")
 public class Province {
 
     @Id
@@ -20,10 +20,8 @@ public class Province {
     private String provinceCode;
     @Column(name = "NOMBRE_PROVINCIA" ,nullable = false)
     private String provinceName;
-    @Column(name = "CODIGO_CA" ,nullable = false)
-    private String communityCode;
 
     @ManyToOne
-    @JoinColumn(name = "CODIGO_CA",referencedColumnName = "communityCode")
+    @JoinColumn(name = "CODIGO_CA",referencedColumnName = "CODIGO_CA")
     private Community community;
 }
