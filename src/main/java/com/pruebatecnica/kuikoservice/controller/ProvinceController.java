@@ -1,5 +1,6 @@
 package com.pruebatecnica.kuikoservice.controller;
 
+import com.pruebatecnica.kuikoservice.dto.ProvinceDataDto;
 import com.pruebatecnica.kuikoservice.dto.ProvinceDto;
 import com.pruebatecnica.kuikoservice.service.ProvinceService;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +50,13 @@ public class ProvinceController {
 
         provinceService.deleteProvince(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/provinceData/{provinceCode}")
+    public ResponseEntity<ProvinceDataDto> getProvinceData(@PathVariable String provinceCode) {
+
+        ProvinceDataDto provinceInfo = provinceService.getProvinceData(provinceCode);
+
+        return ResponseEntity.ok(provinceInfo);
     }
 }

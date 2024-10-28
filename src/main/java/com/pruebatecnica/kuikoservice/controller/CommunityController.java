@@ -2,6 +2,7 @@ package com.pruebatecnica.kuikoservice.controller;
 
 
 import com.pruebatecnica.kuikoservice.dto.CommunityDto;
+import com.pruebatecnica.kuikoservice.dto.CountProvincesDto;
 import com.pruebatecnica.kuikoservice.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -50,5 +51,13 @@ public class CommunityController {
 
         communityService.deleteCommunity(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/countProvinces/{communityCode}")
+    public ResponseEntity<CountProvincesDto> countProvinces(@PathVariable String communityCode) {
+
+        CountProvincesDto countProvinces = communityService.countProvinces(communityCode);
+
+        return ResponseEntity.ok(countProvinces);
     }
 }
