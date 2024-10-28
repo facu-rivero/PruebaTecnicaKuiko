@@ -49,7 +49,9 @@ public class CommunityServiceImpl implements CommunityService {
         newCommunity.setCommunityCode(communityDto.getCommunityCode());
         newCommunity.setCommunityName(communityDto.getCommunityName());
 
-        return CommunityDtoMapper.toDto(communityRepository.save(newCommunity));
+        Community result = communityRepository.save(newCommunity);
+
+        return CommunityDtoMapper.toDto(result);
     }
 
     @Override
