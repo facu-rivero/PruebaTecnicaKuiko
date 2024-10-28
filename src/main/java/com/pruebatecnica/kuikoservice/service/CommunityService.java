@@ -1,7 +1,7 @@
 package com.pruebatecnica.kuikoservice.service;
 
 import com.pruebatecnica.kuikoservice.dto.CommunityDto;
-import com.pruebatecnica.kuikoservice.model.Community;
+import com.pruebatecnica.kuikoservice.dto.CountProvincesDto;
 
 import java.util.List;
 
@@ -16,4 +16,6 @@ public interface CommunityService {
     CommunityDto updateCommunity(Long id, CommunityDto communityDto);
 
     void deleteCommunity(Long id);
+
+    CountProvincesDto countProvinces(String communityCode);
 }

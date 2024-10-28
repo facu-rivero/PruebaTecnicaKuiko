@@ -1,5 +1,7 @@
 package com.pruebatecnica.kuikoservice.service.implement;
 
+import com.pruebatecnica.kuikoservice.dto.ProvinceDataDto;
+import com.pruebatecnica.kuikoservice.dto.ProvinceDataDtoMapper;
 import com.pruebatecnica.kuikoservice.dto.ProvinceDto;
 import com.pruebatecnica.kuikoservice.dto.ProvinceDtoMapper;
 import com.pruebatecnica.kuikoservice.model.Community;
@@ -88,5 +90,16 @@ public class ProvinceServiceImpl implements ProvinceService {
             throw new NoSuchElementException("La provincia que desea eliminar no existe");
         }
         provinceRepository.deleteById(id);
+    }
+
+    @Override
+    public ProvinceDataDto getProvinceData(String provinceCode) {
+
+        Province province = provinceRepository.findByProvinceCode(provinceCode)
+                .orElseThrow(() -> new NoSuchElementException("La Provincia solicitada no fue encontrada"));
+
+        ProvinceDataDto provinceInfo = ProvinceDataDtoMapper.toDto(province);
+
+        return provinceInfo;
     }
 }

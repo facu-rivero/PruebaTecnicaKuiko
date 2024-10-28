@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "74b5a64f-d948-45a8-bb95-40dfe253d6ba",
+		"name": "KuikoService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15284086"
+	},
+	"item": [
+		{
+			"name": "Province",
+			"item": [
+				{
+					"name": "GetAllProvinces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/province",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProvinceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/province/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProvince",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provinceCode\": \"53\",\r\n    \"provinceName\": \"TEST - TEST\",\r\n    \"communityCode\": \"CV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/api/province",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProvince",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provinceCode\": \"53\",\r\n    \"provinceName\": \"TEST 1 - TEST 1\",\r\n    \"communityCode\": \"CV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/api/province/53",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProvince",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/province/53",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProvinceData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/province/provinceData/45",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"province",
+								"provinceData",
+								"45"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Community",
+			"item": [
+				{
+					"name": "GetAllCommunities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/community",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommunityById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/community/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCommunity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"communityCode\": \"TEST\",\r\n    \"communityName\": \"COMUNIDAD TEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/api/community",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCommunity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"communityCode\": \"TEST1\",\r\n    \"communityName\": \"COMUNIDAD TEST 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/api/community/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCommunity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/community/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CountProvinces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/api/community/countProvinces/CM",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"community",
+								"countProvinces",
+								"CM"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ApiExterna",
+			"item": [
+				{
+					"name": "GetWeatherByProvince",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

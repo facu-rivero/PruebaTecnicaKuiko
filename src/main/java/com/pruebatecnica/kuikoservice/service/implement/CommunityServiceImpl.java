@@ -1,7 +1,6 @@
 package com.pruebatecnica.kuikoservice.service.implement;
 
-import com.pruebatecnica.kuikoservice.dto.CommunityDto;
-import com.pruebatecnica.kuikoservice.dto.CommunityDtoMapper;
+import com.pruebatecnica.kuikoservice.dto.*;
 import com.pruebatecnica.kuikoservice.model.Community;
 import com.pruebatecnica.kuikoservice.repository.CommunityRepository;
 import com.pruebatecnica.kuikoservice.service.CommunityService;
@@ -78,5 +77,16 @@ public class CommunityServiceImpl implements CommunityService {
             throw new NoSuchElementException("La comunidad que desea eliminar no existe");
         }
         communityRepository.deleteById(id);
+    }
+
+    @Override
+    public CountProvincesDto countProvinces(String communityCode) {
+
+        Community community = communityRepository.findByCommunityCode(communityCode)
+                .orElseThrow(() -> new NoSuchElementException("La Comunidad Autonoma solicitada no fue encontrada"));
+
+        CountProvincesDto countProvinces = CountProvincesDtoMapper.toDto(community);
+
+        return countProvinces;
     }
 }
